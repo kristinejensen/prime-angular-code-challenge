@@ -3,17 +3,28 @@ app.controller('AddHeroController', ['$http', function($http){
 
   var self = this;
   self.newHero = {};
-  var newHeroData = self.newHero;
+  self.heroReport = {};
 
   self.addHero = function(){
     console.log('add hero button clicked');
     $http({
       method: 'POST',
       url: '/heroes',
-      data: newHeroData
+      data: self.newHero
     }).then(function(response){
       console.log(response);
     });
-    self.newHero = null;
+    self.newHero = {};
   }
+
+  self.reportHero = function(){
+      $http({
+        method: 'POST',
+        url: '/heroes/reportHero',
+        data: self.heroReport
+      }).then(function(response){
+        console.log(response);
+      })
+    self.heroReport = {};
+  };
 }]); // end of myApp controller

@@ -6,4 +6,16 @@
       <th><input type="number" placeholder="Power ID" ng-model="ah.newHero.power_id" class="form-control"></th>
       <th><button ng-click="ah.addHero()" class="btn btn-primary">Add New Hero</button></th>
     </tr>
+  </table>
+
+  <h4>Have you seen a hero? Report your sighting via the email form below!</h4>
+  <table>
+    <tr>
+      <th><input type="text" placeholder="Sender's email" ng-model="ah.heroReport.senderEmail" class="form-control"></th>
+      <th><input type="text" placeholder="Recipient's email" ng-model="ah.heroReport.recipientEmail" class="form-control"></th>
+      <th><input type="text" placeholder="Subject" ng-model="ah.heroReport.subject" class="form-control"></th>
+      <th><input type="text" placeholder="Email text" ng-model="ah.heroReport.text" class="form-control"></th>
+      <th><button ng-click="ah.reportHero()" class="btn btn-primary">Send Email</button></th>
+    </tr>
+  </table>
   </body>

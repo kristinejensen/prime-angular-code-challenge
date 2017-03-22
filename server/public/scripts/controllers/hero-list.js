@@ -26,4 +26,16 @@ app.controller('HeroListController', ['$http', function($http){
     });
   }
 
+  self.addHero = function(){
+    console.log('add hero button clicked');
+    $http({
+      method: 'POST',
+      url: '/heroes',
+      data: newHeroData
+    }).then(function(response){
+      console.log(response);
+    });
+    self.newHero = null;
+  }
+
 }]); // end of myApp controller
