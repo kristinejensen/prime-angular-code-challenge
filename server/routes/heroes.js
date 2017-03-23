@@ -1,5 +1,5 @@
 var express = require('express');
-var nodemailer = ('nodemailer');
+var nodemailer = require('nodemailer');
 var router = express.Router();
 var pool = require('../config/database-pool.js'); // Creates database pool, if you need to change database, do it in the config object in this file
 // var transporter = nodemailer.createTransport();
@@ -32,7 +32,7 @@ router.post('/reportHero', function(req, res){
   });
 
   var mailOptions = {
-    from: req.body.senderEmail,
+    from: 'peacefulmountain2@gmail.com',
     to: req.body.recipientEmail,
     subject: req.body.subject,
     text: req.body.text
